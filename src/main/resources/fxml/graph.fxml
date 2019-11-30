@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.ScatterChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="752.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Wojaro.Controller">
+   <children>
+      <ScatterChart fx:id="Wykres" layoutX="184.0" layoutY="91.0" prefHeight="409.0" prefWidth="550.0" title="Trajektoria planet">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </ScatterChart>
+      <Button fx:id="btnBisekcja" layoutX="48.0" layoutY="297.0" mnemonicParsing="false" onAction="#ActBtnBisekcja" text="Metoda Bisekcji" />
+      <Button fx:id="btnPktStaly" layoutX="38.0" layoutY="345.0" mnemonicParsing="false" onAction="#ActBtnPktStaly" text="Metoda pkt stałego" />
+      <Button fx:id="btnNewton" layoutX="43.0" layoutY="397.0" mnemonicParsing="false" onAction="#ActBtnNewton" text="Metoda Newtona" />
+      <Button fx:id="btnSieczne" layoutX="41.0" layoutY="446.0" mnemonicParsing="false" onAction="#ActBtnSieczne" text="Metoda Siecznych" />
+      <Label layoutX="14.0" layoutY="250.0" prefHeight="41.0" prefWidth="163.0" text="Wybór metody wyznaczania pierwisatków" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label contentDisplay="CENTER" layoutX="144.0" prefHeight="50.0" prefWidth="463.0" text="Wyznaczanie trajektori planet Układu Słonecznego">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="e" layoutX="21.0" layoutY="140.0" text="0.0167" />
+      <TextField fx:id="a" layoutX="21.0" layoutY="206.0" promptText="Odległość planety od Słońca" text="150*10^6" />
+      <Label layoutX="21.0" layoutY="50.0" prefHeight="66.0" prefWidth="175.0" text="Proszę najpierw wpisać następujace parametry:" wrapText="true">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="52.0" layoutY="122.0" text="Ekscentryczność" />
+      <Label layoutX="5.0" layoutY="188.0" text="Odległość planety od Słońca [km]" />
+   </children>
+</AnchorPane>
