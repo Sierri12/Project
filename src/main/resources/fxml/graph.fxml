@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.chart.ScatterChart?>
 <?import javafx.scene.control.Button?>
@@ -9,38 +8,49 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="752.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Wojaro.Controller">
+<AnchorPane fx:id="Kontener" prefHeight="600.0" prefWidth="800.0" stylesheets="@graph.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Wojaro.Controller">
    <children>
-      <ScatterChart fx:id="Wykres" layoutX="184.0" layoutY="91.0" prefHeight="409.0" prefWidth="550.0" title="Trajektoria planet">
+      <ScatterChart fx:id="Wykres" layoutX="209.0" layoutY="85.0" prefHeight="432.0" prefWidth="566.0" style="-fx-background-color: #c9c2bd;" stylesheets="@graph.css" title="Trajektorie planet">
         <xAxis>
-          <CategoryAxis side="BOTTOM" />
+          <NumberAxis side="BOTTOM" />
         </xAxis>
         <yAxis>
           <NumberAxis side="LEFT" />
         </yAxis>
       </ScatterChart>
-      <Button fx:id="btnBisekcja" layoutX="48.0" layoutY="297.0" mnemonicParsing="false" onAction="#ActBtnBisekcja" text="Metoda Bisekcji" />
-      <Button fx:id="btnPktStaly" layoutX="38.0" layoutY="345.0" mnemonicParsing="false" onAction="#ActBtnPktStaly" text="Metoda pkt stałego" />
-      <Button fx:id="btnNewton" layoutX="43.0" layoutY="397.0" mnemonicParsing="false" onAction="#ActBtnNewton" text="Metoda Newtona" />
-      <Button fx:id="btnSieczne" layoutX="41.0" layoutY="446.0" mnemonicParsing="false" onAction="#ActBtnSieczne" text="Metoda Siecznych" />
-      <Label layoutX="14.0" layoutY="250.0" prefHeight="41.0" prefWidth="163.0" text="Wybór metody wyznaczania pierwisatków" textAlignment="CENTER" wrapText="true">
+      <Button fx:id="btnBisekcja" layoutX="66.0" layoutY="380.0" mnemonicParsing="false" onAction="#ActBtnBisekcja" style="-fx-background-color: black;" stylesheets="@graph.css" text="Metoda Bisekcji" textFill="#fa0000" />
+      <Button fx:id="btnPktStaly" layoutX="56.0" layoutY="428.0" mnemonicParsing="false" onAction="#ActBtnPktStaly" style="-fx-background-color: black;" stylesheets="@graph.css" text="Metoda pkt stałego" textFill="#f20000" />
+      <Button fx:id="btnNewton" layoutX="61.0" layoutY="480.0" mnemonicParsing="false" onAction="#ActBtnNewton" style="-fx-background-color: black;" stylesheets="@graph.css" text="Metoda Newtona" textFill="#fa0404" />
+      <Button fx:id="btnSieczne" layoutX="59.0" layoutY="529.0" mnemonicParsing="false" onAction="#ActBtnSieczne" style="-fx-text-fill: red; -fx-background-color: black;" stylesheets="@graph.css" text="Metoda Siecznych" />
+      <Label layoutX="32.0" layoutY="333.0" prefHeight="41.0" prefWidth="163.0" stylesheets="@graph.css" text="Wybór metody wyznaczania pierwisatków" textAlignment="CENTER" textFill="#e26d14" wrapText="true">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label contentDisplay="CENTER" layoutX="144.0" prefHeight="50.0" prefWidth="463.0" text="Wyznaczanie trajektori planet Układu Słonecznego">
+      <Label contentDisplay="CENTER" layoutX="168.0" prefHeight="50.0" prefWidth="463.0" stylesheets="@graph.css" text="Wyznaczanie trajektori planet Układu Słonecznego" textFill="#e26d14">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>
       </Label>
-      <TextField fx:id="e" layoutX="21.0" layoutY="140.0" text="0.0167" />
-      <TextField fx:id="a" layoutX="21.0" layoutY="206.0" promptText="Odległość planety od Słońca" text="150*10^6" />
-      <Label layoutX="21.0" layoutY="50.0" prefHeight="66.0" prefWidth="175.0" text="Proszę najpierw wpisać następujace parametry:" wrapText="true">
+      <TextField fx:id="e" layoutX="39.0" layoutY="157.0" promptText="Ekscentryczność" stylesheets="@graph.css" text="0.0167" />
+      <TextField fx:id="a" layoutX="39.0" layoutY="211.0" promptText="Dystans [A.U.]" stylesheets="@graph.css" text="1" />
+      <Label layoutX="32.0" layoutY="73.0" prefHeight="66.0" prefWidth="175.0" stylesheets="@graph.css" text="Proszę najpierw wpisać następujace parametry:" textAlignment="CENTER" textFill="#e26d14" wrapText="true">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="52.0" layoutY="122.0" text="Ekscentryczność" />
-      <Label layoutX="5.0" layoutY="188.0" text="Odległość planety od Słońca [km]" />
+      <Label layoutX="70.0" layoutY="139.0" stylesheets="@graph.css" text="Ekscentryczność" textFill="#ead602" />
+      <Label layoutX="79.0" layoutY="193.0" stylesheets="@graph.css" text="Dystans [A.U.]" textFill="#ead602" />
+      <Button fx:id="btnReset" layoutX="460.0" layoutY="536.0" mnemonicParsing="false" onAction="#ActReset" style="-fx-background-color: red;" stylesheets="@graph.css" text="RESET" textFill="#f5f0f0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnZapis" layoutX="665.0" layoutY="542.0" mnemonicParsing="false" onAction="#actZapis" style="-fx-background-color: yellow;" stylesheets="@graph.css" text="Zapis jako zdjęcie">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <TextField fx:id="eaMax" layoutX="38.0" layoutY="287.0" promptText="max Ea" stylesheets="@graph.css" text="0.005" />
+      <Label layoutX="37.0" layoutY="248.0" prefHeight="38.0" prefWidth="149.0" stylesheets="@graph.css" text="Procentowy dopuszczalny błąd aproksymacji" textAlignment="CENTER" textFill="#ead602" wrapText="true" />
    </children>
 </AnchorPane>
